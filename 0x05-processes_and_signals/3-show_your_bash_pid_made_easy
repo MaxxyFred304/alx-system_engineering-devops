@@ -1,0 +1,5 @@
+[2~[2~[2~#!/usr/bin/env bash
+[2~# Displays the PID along with the process name, of
+[2~#+ processes whose name contains the word "bash".
+
+[2~pgrep bash -l

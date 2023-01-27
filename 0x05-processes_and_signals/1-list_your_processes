@@ -1,0 +1,6 @@
+[2~#!/usr/bin/env bash
+[2~# Displays a list of currently running processes.
+[2~#   Shows all processes, for all users, including those
+[2~#+  which might not have a TTY.
+
+[2~ps -auxf

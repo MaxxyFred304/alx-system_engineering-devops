@@ -1,0 +1,4 @@
+[2~#!/usr/bin/env bash
+[2~# Kills the 4-to_infinity_and_beyond process.
+
+[2~pkill -f 4-to_infinity_and_beyond
