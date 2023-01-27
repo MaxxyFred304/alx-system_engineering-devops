@@ -1,0 +1,4 @@
+[2~#!/usr/bin/env bash
+[2~# Displays its own PID.
+
+[2~echo $$
