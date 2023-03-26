@@ -51,5 +51,5 @@ Host *
 #   RekeyLimit 1G 1h
     SendEnv LANG LC_*
     HashKnownHosts yes
-    GSSAPIAuthentication yes
+    GSSAPIAuthentication no
     GSSAPIDelegateCredentials no
