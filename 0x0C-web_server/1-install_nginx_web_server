@@ -1,21 +1,15 @@
 #!/usr/bin/env bash
-# Installs Nginx with the following configurations:
-#+    Listens on port 80.
-#+    Returns a page containing "Hello World!" when queried
-#++    at the root with a curl GET request.
+# Update package lists
+sudo apt-get update
 
-apt-get update && apt upgrade -y
-apt-get install -y nginx
+# Install nginx
+sudo apt-get install nginx -y
 
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Hello World!" > /etc/nginx/html/index.html
-printf %s "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     root        /etc/nginx/html;
-     index       index.html index.html;
-}
-" > /etc/nginx/sites-available/default
+# Configure nginx to listen on port 80
+sudo sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
 
-service nginx restart
+# Configure nginx to serve "Hello World!" at root
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+
+# Restart nginx
+sudo service nginx restart
